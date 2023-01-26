@@ -58,10 +58,10 @@ jobs:
         rm -rf ./patch/redsocks
         #rm -rf ./luci-app-cloudflared
         rm -rf ./patch/luci-wall/luci-app-ssr-plus
-        rm -rf ./openwrt-cloudflared
+        #rm -rf ./openwrt-cloudflared
         
         #git clone https://github.com/grayearth/luci-app-cloudflared ./luci-app-cloudflared
-        svn export https://github.com/kiddin9/openwrt-packages/trunk/openwrt-cloudflared ./openwrt-cloudflared
+        #svn export https://github.com/kiddin9/openwrt-packages/trunk/openwrt-cloudflared ./openwrt-cloudflared
         git clone https://github.com/zzsj0928/luci-app-pushbot ./luci-app-pushbot
         git clone https://github.com/tty228/luci-app-serverchan ./luci-app-serverchan
         git clone https://github.com/ntlf9t/luci-app-easymesh ./luci-app-easymesh
