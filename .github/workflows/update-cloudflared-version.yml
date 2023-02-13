@@ -13,6 +13,11 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v2
 
+    - name: Set up Github Token
+      uses: actions/env@v2
+      with:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
     - name: Setup python
       uses: actions/setup-python@v2
       with:
@@ -34,4 +39,3 @@ jobs:
         release_number=$(grep 'PKG_RELEASE:=' ./openwrt-cloudflared/Makefile | awk -F '=' '{print $2}')
         release_number=$((release_number + 1))
         sed -i "s/PKG_RELEASE:=.*/PKG_RELEASE:=$release_number/" ./openwrt-cloudflared/Makefile
-
