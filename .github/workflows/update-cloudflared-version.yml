@@ -13,11 +13,9 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v2
 
-    - name: Set GITHUB_TOKEN environment variable
-      uses: actions/set-env@v1
-      with:
-        name: GITHUB_TOKEN
-        value: ${{ secrets.GITHUB_TOKEN }}
+    - name: Set environment variables
+      run: |
+        echo "::set-env name=TOKEN::${{ secrets.GITHUB_TOKEN }}"
 
     - name: Setup python
       uses: actions/setup-python@v2
