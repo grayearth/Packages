@@ -28,10 +28,10 @@ jobs:
         latest_version=$(curl --silent https://api.github.com/repos/cloudflare/cloudflared/releases/latest | grep '"tag_name":' | sed -E 's/.*"([^"]+)".*/\1/')
 
         # Update the PKG_VERSION variable in the Makefile
-        sed -i "s/PKG_VERSION:=.*/PKG_VERSION:=$latest_version/" openwrt-cloudflared/Makefile
+        sed -i "s/PKG_VERSION:=.*/PKG_VERSION:=$latest_version/" ./openwrt-cloudflared/Makefile
 
         # Increment the PKG_RELEASE variable
-        release_number=$(grep 'PKG_RELEASE:=' openwrt-cloudflared/Makefile | awk -F '=' '{print $2}')
+        release_number=$(grep 'PKG_RELEASE:=' ./openwrt-cloudflared/Makefile | awk -F '=' '{print $2}')
         release_number=$((release_number + 1))
-        sed -i "s/PKG_RELEASE:=.*/PKG_RELEASE:=$release_number/" openwrt-cloudflared/Makefile
+        sed -i "s/PKG_RELEASE:=.*/PKG_RELEASE:=$release_number/" ./openwrt-cloudflared/Makefile
 
