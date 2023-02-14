@@ -112,6 +112,10 @@ jobs:
         svn export https://github.com/coolsnowwolf/packages/trunk/net/socat ./op-socat/socat
         git clone https://github.com/sbwml/luci-app-mosdns ./op-mosdns
         
+        # copy cloudflared init file to folder
+        rm -rf ./openwrt-cloudflared/cloudflared.init
+        cp ./configstore/cloudflared.init.token ./openwrt-cloudflared/cloudflared.init
+        
 
     - name: Apply
       run: |
