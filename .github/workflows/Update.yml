@@ -61,7 +61,7 @@ jobs:
         rm -rf ./patch/luci-wall/luci-app-ssr-plus
         rm -rf ./openwrt-cloudflared
         
-        git clone --depth 1 --shallow-submodules https://github.com/linkease/openwrt-app-actions ./linkease/openwrt-app-actions
+        # git clone --depth 1 --shallow-submodules https://github.com/linkease/openwrt-app-actions ./linkease/openwrt-app-actions
         #git clone https://github.com/grayearth/luci-app-cloudflared ./luci-app-cloudflared
         git clone https://github.com/yichya/openwrt-cloudflared ./openwrt-cloudflared
         git clone https://github.com/zzsj0928/luci-app-pushbot ./luci-app-pushbot
